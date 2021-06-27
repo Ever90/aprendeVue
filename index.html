@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <script src="js/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Aprendiendo Vue.js</h1>
+
+    <div id="app">
+        <h2>{{message}}</h2>
+        <p>{{sum}}</p>
+        <p>{{calcularSuma(sum,8)}}</p>
+    
+    </div>
+
+    <div id="app-2">
+    <!--directiva-->    
+        <span v-bind:title="message">
+          Mueva el mouse sobre mí durante unos segundos
+          para ver mi título enlazado dinámicamente.
+        </span>
+      </div>
+
+      <!-- Condicional-->
+
+      <div id="app-3">
+        <span v-if="seen== true">Ahora me ves</span>
+        <span v-else>El texto original ya no es visible</span>
+        <div v-if="value < 5">El numero es menor a 5</div>
+        <div v-else-if="value == 7">El numero es igual a 7</div>
+        <div v-else>El numero es otra cantidad</div>
+      </div>
+
+
+      <!--Bucle for-->
+
+      <div id="app-4">
+        <ol>
+          <li v-for="todo in todos">
+            {{ todo.text }}
+          </li>
+        </ol>
+        <ul>
+            <li v-for="name in nombre">
+                {{name}}
+            </li>
+
+        </ul>
+      </div>
+
+      <!-- interaccion con el usuario-->
+
+      <div id="app-5">
+        <p>{{ message }}</p>
+        <button v-on:click="mensajeReves">Mensaje invertido</button>
+      </div>
+
+      <!-- enlace bidedireccional con v-model-->
+
+      <div id="app-6">
+        <p>{{ message }}</p>
+        <input v-model="message">
+      </div>
+
+    <!--Componentes en vue-->
+      <div id="app-7">
+        <ol>
+          <!--
+            Ahora proporcionamos a cada todo-item con el objeto todo
+            que representa, para que su contenido pueda ser dinámico.
+            También necesitamos proporcionar a cada componente con una "clave",
+            que vamos a explicar más adelante.
+          -->
+          <todo-item
+            v-for="item in groceryList"
+            v-bind:todo="item"
+            v-bind:key="item.id">
+          </todo-item>
+        </ol>
+      </div>
+
+
+      <!-- Computed Properties and Watchers -->
+
+      <div id="example">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+      </div>
+
+      <!-- Renderizado de html y atributos-->
+      <div id="app-8">
+      <div v-html="contenido_html"></div>
+      <!--Forma de declarar los atributo en Vuejs-->
+      
+      <img :src="src"><br>
+      <div v-html="titulo"></div>
+      <img v-bind:src="image" :alt="altTexto">
+
+
+    </div>
+
+
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>
