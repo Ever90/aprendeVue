@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <script src="js/vue.js"></script>
+
+    <title>aprende Vue</title>
+    </head>
+    <body>
+
+        <h1>Condicionales en VueJS</h1>
+        <!-- Condicional-->
+
+      <div id="app-3">
+        <span v-if="seen== true">Ahora me ves</span>
+        <span v-else>El texto original ya no es visible</span>
+        <div v-if="value < 5">El numero es menor a 5</div>
+        <div v-else-if="value == 7">El numero es igual a 7</div>
+        <div v-else>El numero es otra cantidad</div>
+      </div> 
+      <hr>
+
+      <script src="js/app.js"></script>
+    </body>
+</html>

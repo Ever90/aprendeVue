@@ -124,5 +124,29 @@ let app5 = new Vue({
 
   });
 
+  //eventos en html
+
+  let app9= new Vue({
+    el: '#app-9',
+    data:{
+        numero: 14
+    },
+    methods:{
+
+      incrementar(){
+        this.numero++
+      },
+
+      decrementar(){
+        this.numero--
+
+      }
+    }
+
+  });
+
+  
+
+
 
    
