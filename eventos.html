@@ -5,8 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <script src="js/vue.js"></script>
-
+    <!-- Dado que ya existe un rico ecosistema de bibliotecas ajax         -->
+<!-- y colecciones de métodos de utilidad de uso general, Vue core     -->
+<!-- es capaz de permanecer pequeño al no reinventarlos. Esto también  -->
+<!-- te da la libertad de usar aquello con lo que estás familiarizado. -->
+<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
     <title>aprende Vue</title>
+
+    <style>
+        .error{
+
+            color: blue;
+        }
+        .no_error{
+
+            color: red;
+
+        }
+
+    </style>
     </head>
     <body>
 
@@ -17,9 +35,36 @@
             <button v-on:click="incrementar">incrementa</button>
             <button v-on:click="decrementar">decrementa</button>
             
-            <h2 :style="{color:'blue',fontSize: numero +'px'}">Curso de Vue {{numero}}</h2>
+            <h2 :style="{color:'navy',fontSize: numero +'px'}">Curso de Vue {{numero}}</h2>
        </div>
+       <hr>
+       <!--Manejador de Eventos-->
+       <div id="example-2">
+        <!-- `saludar` es el nombre de un método definido a continuación -->
+        <button v-on:click="saludar">Enviar saludo</button>
+        </div>
 
-      <script src="js/app.js"></script>
+
+        <!--Observador personalizado-->
+
+        <div id="watch-example">
+            <p>
+              Haz una pregunta de sí/no:
+              <input v-model="question">
+            </p>
+            <p>{{ answer }}</p>
+          </div>
+
+          <!--v blind de clase-->
+
+          <div id="clase" >
+             <h2 :class="{error:p_error, no_error: !p_error}">Texto de pureba</h2> 
+
+             <h2 v-if="p_error">Texto de prueba con if</h2> 
+             <h2 v-show="p_error">Texto de prueba con show</h2> 
+         </div>
+
+
+      <script src="js/evento.js"></script>
     </body>
 </html> 

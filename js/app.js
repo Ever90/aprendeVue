@@ -140,10 +140,48 @@ let app5 = new Vue({
       decrementar(){
         this.numero--
 
+      },
+
+      //observadores(watch)
+      watch:{
+
+        numero: function(valor){
+          console.log("watch"+ val);
+
+        }
       }
+
     }
+    
+
+
+
 
   });
+
+  //manejador de eventos
+
+  var example2 = new Vue({
+    el: '#example-2',
+    data: {
+      name: 'Vue.js'
+    },
+    // definir métodos bajo el objeto `methods`
+    methods: {
+      saludar: function (event) {
+        // `this` dentro de los métodos apunta a la instancia de Vue
+        alert('Hola ' + this.name + '!')
+        // `evento` es el evento DOM nativo
+        if (event) {
+          alert(event.target.tagName)
+        }
+      }
+    }
+  })
+
+  //Watch (observadores)
+
+
 
   
 
